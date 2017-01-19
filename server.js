@@ -37,7 +37,9 @@ app.use('*', function(req, res){
 	res.sendFile(viewsPath + '404.html');
 })
 
-app.listen(3000, function(){
+app.set('port', process.env.PORT || 3000);
+
+app.listen(app.get('port'), function(){
 	console.log("Listening for connections to port 3000");
 })
 
