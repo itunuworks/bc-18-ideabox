@@ -12,11 +12,58 @@
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<ul class="nav navbar-nav">
-					<li><a href="/">Login</a></li>
+					<li><a id="logout" href="#">LogOut</a></li>
 					<li><a href="homepage">Homepage</a></li>
 					<li class="active"><a href="#">Landing page</a></li>
 				</ul>
 			</div>
 		</nav>
+		<div class="container">
+			<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">New idea</button>
+			<!-- Modal -->
+		  <div class="modal fade" id="myModal" role="dialog">
+		    <div class="modal-dialog">
+		    	<div class="modal-content">
+				    <div class="modal-header" style="padding:35px 50px;">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		          <h4><span class="glyphicon glyphicon-pencil"></span><b>Create new idea.</b></h4>
+		        </div>
+		        <div class="modal-body" style="padding:40px 50px;">
+		          <form>
+			          <div class="form-group">
+			            <label for="title" class="form-control-label">Title:</label>
+			            <input type="text" class="form-control" id="title">
+			          </div>
+			          <div class="form-group">
+			            <label for="description" class="form-control-label">Description:</label>
+			            <textarea class="form-control" id="description" data-provide="markdown" rows="10"></textarea>
+			          </div>
+			        </form>
+		        </div>
+		        <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			        <button type="button" class="btn btn-primary">Save Idea</button>
+			      </div>
+				  </div>
+			  </div>
+			</div>
+		</div>
+		<script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyC3-cs9GS1LtZgp0mG0uyvDCyTbKco3ZNI",
+		    authDomain: "ideabox-dffe8.firebaseapp.com",
+		    databaseURL: "https://ideabox-dffe8.firebaseio.com",
+		    storageBucket: "ideabox-dffe8.appspot.com",
+		    messagingSenderId: "1041486972571"
+		  };
+		  firebase.initializeApp(config);
+		</script>
+		<script src="main.js"></script>
+		<script src="landing.js"></script>
+		<script src="bootstrap-markdown.js"></script>
+		<script src="marked.js"></script>
+		<link rel="stylesheet" href="css/bootstrap-markdown.min.css">
 	</body>
 </html>
